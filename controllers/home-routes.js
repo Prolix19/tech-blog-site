@@ -63,7 +63,7 @@ router.get('/signup', (req, res) => {
 });
 
 // Get a single post by its ID
-router.get('/post/:id', withAuth, (req, res) => {
+router.get('/post/:id', (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id

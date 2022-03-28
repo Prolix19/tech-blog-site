@@ -13,6 +13,7 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ### Link to Deployed Application
 The application is deployed using Heroku with JawsDB MySQL at the following URL:
+
 [http://obscure-fjord-80382.herokuapp.com/](http://obscure-fjord-80382.herokuapp.com/)
 
 ### For Further Details
