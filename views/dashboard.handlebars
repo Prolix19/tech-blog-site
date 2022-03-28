@@ -1,34 +1,53 @@
-<section>
-    <h2>Create New Post</h2>
+{{!-- Insert header partial --}}
+{{> dashboard-header}}
 
-    <form class="new-post-form">
-    <div>
-        <label for="post-title">Title</label>
-        <input type="text" id="post-title" name="post-title" />
-    </div>
+<main>
+    {{!-- Create post form is hidden until user clicks "+ New Post" button --}}
+    <section id="toggle" hidden>
+        <div class="card mx-auto">
+            <div class="card-header">
+                <span>Create New Post</span>
+            </div>
 
-    <div>
-        <label for="post-content">Content</label>
-        <textarea id="post-content" name="post-content"></textarea>
-    </div>
+            <div class="card-body">
+                <form class="new-post-form">
+                    <div>
+                        <label>Title</label>
+                        <br>
+                        <input type="text" id="post-title" name="post-title" />
+                    </div>
+                    <div>
+                        <label>Content</label>
+                        <br>
+                        <textarea id="post-content" name="post-content"></textarea>
+                    </div>
+                    <br>
+                    <div>
+                        <button type="submit" class="btn">Create</button>
+                    </div>
+                    <p></p>
+                </form>
+            </div>
+        </div>
+    </section>
 
-    <button type="submit" class="btn">Create</button>
+    <p></p>
+    {{!-- Clicking this reveals the form above --}}
+    <button type="submit" class="btn" id="new-post-btn">+ New Post</button>
 
-    </form>
-</section>
-
-{{#if posts.length}}
-<section>
-    <h2>Your Posts</h2>
-    <ol>
+    <p></p>
+    {{!-- Iterate over the user's posts (if any) and display them --}}
+    {{#if posts.length}}
+    <section class="posts">
         {{#each posts as |post|}}
-        <li>
-            {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-        </li>
+            {{!-- Clicking a post will take a user to the page to edit/delete it --}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link">
+                <button type="submit" class="btn">{{post.title}}<span class="right">{{format_date post.created_at}}</span></button>
+            </a>
+            <p></p>
         {{/each}}
-    </ol>
-</section>
-{{/if}}
+    </section>
+    {{/if}}
+</main>
 
 <script src="/js/add-post.js"></script>

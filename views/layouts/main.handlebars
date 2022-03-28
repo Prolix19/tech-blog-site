@@ -5,30 +5,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>The Tech Blog</title>
+        {{!-- Bring in stylesheet --}}
         <link rel="stylesheet" href="/css/style.css">
     </head>
 
     <body>
         <div class="wrapper">
-            <header>
-                <h1>
-                    <a href="/">Just Tech News</a>
-                </h1>
-                <nav>
-                    <a href="/">Home</a>
-                    <a href="/dashboard">dashboard</a>
-                    {{#unless loggedIn}}
-                    <a href="/login">login</a>
-                    {{/unless}}
-                    <button id="logout" class="btn-no-style">logout</button>
-                </nav>
-            </header>
-
-            <main>
-                {{{ body }}}
-            </main>
+            {{{body}}}
         </div>
 
+        {{!-- JS related to logging out is only required if the user is logged in --}}
         {{#if loggedIn}}
         <script src="/js/logout.js"></script>
         {{/if}}

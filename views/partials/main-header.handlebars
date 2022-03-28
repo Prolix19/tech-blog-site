@@ -1,0 +1,18 @@
+{{!-- Had to split this out from the dashboard header since it's different --}}
+<header class="jumbotron">
+    <nav>
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/dashboard">Dashboard</a>
+        {{!-- If visitor isn't logged in, display the link to do so --}}
+        {{#unless loggedIn}}
+        <a class="nav-link" href="/login">Login</a>
+        {{/unless}}
+        {{!-- If visitor is logged in, display the link to logout --}}
+        {{#if loggedIn}}
+        <a class="nav-link" id="logout" href="/">Logout</a>
+        {{/if}}
+    </nav>
+    <h1>
+        <a href="/">The Tech Blog</a>
+    </h1>
+</header>

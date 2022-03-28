@@ -1,178 +1,170 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    color: #333;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #225ca3;
-    font-weight: bold;
-    transition: color .1s;
-  }
-  
-  a:hover {
-    color: #3486eb;
-  }
-  
-  button {
-    background-color: #225ca3;
-    border: 0;
-    padding: 1%;
-    color: white;
-    font-weight: bold;
-    transition: background-color .1s;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  button:hover {
-    background-color: #3486eb;
-  }
-  
-  .post-list {
-    margin: 0;
-    padding: 0;
-  }
-  
-  textarea, input {
-    padding: .5%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  textarea:focus, input:focus {
-    outline: none;
-    border: 1px solid #3486eb;
-  }
-  
-  textarea {
-    min-width: 40%;
-    min-height: 100px;
-  }
-  
-  form > div {
-    margin-bottom: 2%;
-  }
-  
-  form label {
-    display: block;
-  }
-  
-  .wrapper {
-    width: 100%;
-    min-height: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  header {
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1%;
-  }
-  
-  header h1 {
-    font-size: 1em;
-  }
-  
-  main {
-    flex: 1;
-    padding: 2% 4%;
-  }
-  
-  .btn-no-style {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-    color: #225ca3;
-    font-size: 100%;
-    font-weight: bold;
-    transition: color .1s;
-    margin-left: 16px;
-  }
-  
-  .btn-no-style:hover {
-    background: none;
-    color: #3486eb;
-  }
-  
-  .delete-post-btn {
-    background-color: #d41414;
-  }
-  
-  .delete-post-btn:hover {
-    background-color: #ff643d;
-  }
-  
-  .post {
-    margin-bottom: 2%;
-    line-height: 150%;
-  }
-  
-  .post .title span {
-    font-style: italic;
-    font-size: 90%;
-    color: #7d7d7d;
-  }
-  
-  .edit-link {
-    display: block;
-    margin: -1.5% 0 2% 0;
-  }
-  
-  .upvote-btn {
-    background-color: #197d0f;
-    transition: background-color .1s;
-  }
-  
-  .upvote-btn:hover {
-    background-color: #1f9c13;
-  }
-  
-  .comment-form {
-    margin-bottom: 5%;
-  }
-  
-  .comment {
-    padding: 1%;
-    margin-bottom: 1%;
-  }
-  
-  .comment:nth-child(odd) {
-    background-color: #fff5eb;
-  }
-  
-  .comment .meta {
-    font-size: 90%;
-    margin-bottom: .5%;
-    opacity: .6;
-  }
-  
-  .new-post-form input {
-    width: 300px;
-  }
-  
-  .edit-post-form {
-    margin-bottom: 5%;
-  }
-  
-  footer {
-    border-top: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    padding: 1%;
-    font-size: 110%;
-  }
+/* Styles for the views */
+
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #D9EAD3;
+}
+
+/* Remove decoration from all anchor tags */
+a {
+  text-decoration: none;
+}
+
+.jumbotron {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background-color: #231010;
+  border-radius: .3rem;  
+}
+
+header h1 {
+  font-size: 4em;
+  background-color: #D9EAD3;
+  color: #231010;
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px #A7A7A7;
+  display: inline-block;
+  margin-left: 1em;
+}
+
+header a {
+  color: #231010;
+  font-weight: bold;
+  transition: color .1s;
+  padding: 1rem;
+}
+
+header a:hover {
+  color: #231010
+}
+
+nav {
+  margin-left: 3em;
+}
+
+.nav-link {
+  font-size: 1.5em;
+  color: #D9EAD3;
+  padding: 0 1rem;
+}
+
+.nav-link:hover {
+  color: #D9EAD3;
+}
+
+nav a {
+  color: #D9EAD3;
+  font-weight: bold;
+  transition: color .1s;
+}
+
+nav a:hover {
+  color: #D9EAD3;
+}
+
+/* Card styles; many items (posts, forms) are implemented as the card class */
+.card {
+  width: 90%;
+  margin: 0 0 1em 3em;
+  border: 2px solid #231010; 
+}
+
+.card-header {
+  background-color: #231010;
+  color: #D9EAD3;
+  height: 50px;
+  padding-left: 0.5em;
+  font-weight: bold;
+}
+
+.card-body {
+  background-color: #D9EAD3;
+  color: #231010;
+  font-size: 1.5em;
+  margin-left: 1em;
+}
+
+.author {
+  float: right;
+}
+
+.card-header a {
+  margin-left: 0.5em;
+  color: #D9EAD3;
+  font-weight: bold;
+  transition: color .1s;
+  font-size: 2em;
+}
+
+.card-header a:hover {
+  color: #D9EAD3;
+}
+
+.card-header span {
+  font-size: 2em;
+}
+
+/* Styling the text inputs */
+textarea, input {
+  width: 50%;
+  padding: .5%;
+  border-radius: 5px;
+  border: 1px solid #231010;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+  border: 1px solid #3486eb;
+}
+
+textarea {
+  min-width: 40%;
+  min-height: 100px;
+}
+
+/* Button styles */
+button {
+  background-color: #666666;
+  border: 0;
+  padding: 0.5em;
+  color: white;
+  font-weight: bold;
+  transition: background-color .1s;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 51%;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #231010;
+}
+
+#new-post-btn {
+  background-color: #231010;
+  border: 1px solid #231010;
+  padding: 0.1em;
+  color: #D9EAD3;
+  border-radius: 5px;
+  margin-left: 1.5em;
+  width: 10%;
+  font-size: 2em;
+  /* Keeps "+ New Post" from collapsing onto more than one line */
+  min-width: 225px;
+}
+
+.toggle {
+  display: none;
+}
+
+/* This is used to move the creation date of a post on the dashboard to the right */
+.right {
+  float: right;
+}
+
+.posts {
+  margin-left: 3em;
+}

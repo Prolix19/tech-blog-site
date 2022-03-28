@@ -1,7 +1,9 @@
-<ol class="post-list">
+{{!-- Bring in the main header partial --}}
+{{> main-header}}
+
+<main>
+    {{!-- Display all of the posts --}}
     {{#each posts as |post|}}
-    <li>
         {{> post-info post}}
-    </li>
     {{/each}}
-</ol>
+</main>

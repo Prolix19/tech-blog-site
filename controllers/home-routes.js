@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Get all posts with their associated comments and users
 router.get('/', (req, res) => {
     console.log(req.session);
     Post.findAll({
@@ -41,6 +42,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// Route for access to the login page
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -50,6 +52,17 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// Route for access to the signup page
+router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('signup');
+});
+
+// Get a single post by its ID
 router.get('/post/:id', withAuth, (req, res) => {
     Post.findOne({
         where: {

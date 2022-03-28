@@ -1,11 +1,13 @@
-<article class="post">
-    <div class="title">
-        <a href="{{post_url}}" target="_blank">{{title}}</a>
-        <span>({{content}})</span>
+{{!-- Displays a card containing the post's data --}}
+<div class="card mx-auto">
+    <div class="card-header">
+        <a href="/post/{{id}}">
+            {{title}}
+        </a>
+        <p class="author">Posted by {{user.username}} on {{format_date created_at}}</p>
     </div>
 
-    <div class="meta">
-        By {{user.username}} on {{ format_date created_at}}
-        | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    <div class="card-body">
+        <p>{{content}}</p>
     </div>
-</article>
+</div>

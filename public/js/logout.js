@@ -1,4 +1,7 @@
-async function logout() {
+async function logout(event) {
+    event.preventDefault();
+
+    // Access the logout route to log the user out, then send them home
     const response = await fetch('/api/users/logout', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' }

@@ -1,13 +1,14 @@
 <div class="comments">
+    {{!-- Go through comments (if any) and create a card for each --}}
     {{#each this}}
-    <section class="comment">
-        <div class="meta">
-            {{user.username}} on {{format_date created_at}}
-        </div>
+    <div class="card mx-auto">
+        <div class="card-header"></div>
 
-        <div class="text">
+        <div class="card-body">
             {{comment_text}}
+            <p></p>
+            &#8211; {{user.username}}, {{format_date created_at}}
         </div>
-    </section>
+    </div>
     {{/each}}
 </div>
