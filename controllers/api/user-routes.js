@@ -51,11 +51,10 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// Add a user; expects {username: "Prolix", email: "fake@fake.net", password: "reallystrongpw"}
+// Add a user; expects {username: "Prolix", password: "reallystrongpw"}
 router.post('/', (req, res) => {
     User.create({
         username: req.body.username,
-        email: req.body.email,
         password: req.body.password
     })
     .then(dbUserData => {
